@@ -46,27 +46,27 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
-	vb.name = "Xubuntu1604_DevBox"
-	#
-	# You may have to comment out or tinker with the values of some of the
-	# customizations, below, to suit the needs/limits of your local machine.
-	#
-	# For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
-	vb.customize ["modifyvm", :id, "--memory", "4096"]
+    vb.name = "udp2kafka_DevBox"
+    #
+    # You may have to comment out or tinker with the values of some of the
+    # customizations, below, to suit the needs/limits of your local machine.
+    #
+    # For a 64-bit VM (courtesy of https://gist.github.com/mikekunze/7486548#file-ubuntu-desktop-vagrantfile)
+    vb.customize ["modifyvm", :id, "--memory", "4096"]
     # Set the number of virtual CPUs for the virtual machine
-	vb.customize ["modifyvm", :id, "--cpus", "3"]
-	# vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
-	# vb.customize ["modifyvm", :id, "--vram", "256"]
+    vb.customize ["modifyvm", :id, "--cpus", "3"]
+    # vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+    # vb.customize ["modifyvm", :id, "--vram", "256"]
     # Enabling the I/O APIC is required for 64-bit guest operating systems, especially Windows Vista;
     # it is also required if you want to use more than one virtual CPU in a VM.
-	vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
     # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
-	vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+    vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
     # Enable, if Guest Additions are installed, whether hardware 3D acceleration should be available
-	vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
-	vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
-	# See Chapter 8. VBoxManage | VirtualBox Manual located @ virtualbox.org/manual/ch08.html
-	# for more information on available options.
+    vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+    # See Chapter 8. VBoxManage | VirtualBox Manual located @ virtualbox.org/manual/ch08.html
+    # for more information on available options.
   end
   #
   # View the documentation for the provider you are using for more
@@ -82,5 +82,5 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision :shell, :path => File.join( "provision", "provision.sh" )
+  # config.vm.provision :shell, :path => File.join( "provision", "provision.sh" )
 end

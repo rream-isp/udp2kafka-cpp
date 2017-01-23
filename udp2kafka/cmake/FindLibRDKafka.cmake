@@ -18,17 +18,17 @@
 # LibRDKafka_INCLUDE_DIR The location of LibRDKafka headers
 
 find_path(LibRDKafka_ROOT_DIR
-    NAMES include/librdkafka/rdkafkacpp.h
+    NAMES include/librdkafka/rdkafka.h
 )
 
 find_library(LibRDKafka_LIBRARIES
-    NAMES rdkafka++
-    HINTS ${LibRDKafka_ROOT_DIR}/lib
+    NAMES librdkafka++.so
+    HINTS ${LibRDKafka_ROOT_DIR}/lib/x86_64-linux-gnu
 )
 
 find_library(LibRDKafka_C_LIBRARIES
-    NAMES rdkafka
-    HINTS ${LibRDKafka_ROT_DIR}/lib
+    NAMES librdkafka.so
+    HINTS ${LibRDKafka_ROOT_DIR}/lib/x86_64-linux-gnu
 )
 
 find_path(LibRDKafka_INCLUDE_DIR
